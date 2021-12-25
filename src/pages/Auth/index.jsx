@@ -1,7 +1,7 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 
-import { Block, LoginForm } from "../../components";
-
+import { Block, LoginForm, RegistrationForm } from "../../components";
 
 import "./Auth.scss";
 
@@ -9,13 +9,13 @@ const Index = () => {
   return (
     <section className="auth">
       <div className="auth__content">
-        <div className="auth__top">
-          <h2>Welcome to Tima Chat</h2>
-          <p>Please enter a username and password</p>
-        </div>
+       
 
         <Block>
-          <LoginForm />
+          <Routes>
+            <Route path="/" element={<LoginForm />} />
+            <Route path="/register" element={<RegistrationForm />} />
+          </Routes>
         </Block>
       </div>
     </section>
